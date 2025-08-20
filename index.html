@@ -5,40 +5,68 @@
   <title>Kore.ai Chatbot</title>
 
   <!-- SDK Libraries -->
-  <script src="libs/kore-no-conflict-start.js" type="text/javascript"></script>
-  <script src="libs/jquery.js" type="text/javascript"></script>
-  <script src="libs/jquery.tmpl.min.js" type="text/javascript"></script>
-  <script src="libs/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="libs/kore-no-conflict-start.js"></script>
+  <script src="libs/jquery.js"></script>
+  <script src="libs/jquery.tmpl.min.js"></script>
+  <script src="libs/jquery-ui.min.js"></script>
   <link href="libs/jquery-ui.min.css" rel="stylesheet">
-  <script src="libs/moment.js" type="text/javascript"></script>
+  <script src="libs/moment.js"></script>
   <script src="../libs/ie11CustomProperties.js"></script>
   <script src="../libs/lodash.min.js"></script>
   <script src="../libs/d3.v4.min.js"></script>
-  <script src="../libs/KoreGraphAdapter.js" type="text/javascript"></script>
+  <script src="../libs/KoreGraphAdapter.js"></script>
   <script src="../libs/anonymousassertion.js"></script>
   <script src="../kore-bot-sdk-client.js"></script>
-  <script src="../libs/perfect-scrollbar.js" type="text/javascript"></script>
-  <script src="chatWindow.js" type="text/javascript"></script>
-  <script src="libs/jquery.daterangepicker.js" type="text/javascript"></script>
+  <script src="../libs/perfect-scrollbar.js"></script>
+  <script src="chatWindow.js"></script>
+  <script src="libs/jquery.daterangepicker.js"></script>
   <link href="libs/daterangepicker.css" rel="stylesheet">
-  <script src="libs/jquery-clockpicker.js" type="text/javascript"></script>
+  <script src="libs/jquery-clockpicker.js"></script>
   <link href="libs/jquery-clockpicker.css" rel="stylesheet">
   <link href="../libs/kore-pickers.css" rel="stylesheet">
-  <script src="../libs/kore-pickers.js" type="text/javascript"></script>
-  <script src="../libs/emoji.js" type="text/javascript"></script>
-  <script src="../libs/recorder.js" type="text/javascript"></script>
-  <script src="../libs/recorderWorker.js" type="text/javascript"></script>
-  <script src="libs/dompurify.js" type="text/javascript"></script>
+  <script src="../libs/kore-pickers.js"></script>
+  <script src="../libs/emoji.js"></script>
+  <script src="../libs/recorder.js"></script>
+  <script src="../libs/recorderWorker.js"></script>
+  <script src="libs/dompurify.js"></script>
   <link href="chatWindow.css" rel="stylesheet">
   <link href="../libs/emojione.sprites.css" rel="stylesheet">
   <link href="../libs/purejscarousel.css" rel="stylesheet">
-  <script src="../libs/purejscarousel.js" type="text/javascript"></script>
-  <script src="custom/customTemplate.js" type="text/javascript"></script>
+  <script src="../libs/purejscarousel.js"></script>
+  <script src="custom/customTemplate.js"></script>
   <link href="../libs/prefect-scrollbar.css" rel="stylesheet">
   <link href="custom/customTemplate.css" rel="stylesheet">
-  <script src="kore-config.js" type="text/javascript"></script>
-  <script src="kore-main.js" type="text/javascript"></script>
-  <script src="libs/kore-no-conflict-end.js" type="text/javascript"></script>
+  <script src="kore-config.js"></script>
+  <script src="kore-main.js"></script>
+  <script src="libs/kore-no-conflict-end.js"></script>
+
+  <!-- ✅ Style Fix to Keep Page Content Visible -->
+  <style>
+    body {
+      visibility: visible !important;
+      overflow: auto !important;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #pageContent {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      z-index: 1;
+      position: relative;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    .openChatWindow {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 
   <!-- ✅ Chat Initialization -->
   <script>
@@ -72,10 +100,13 @@
   </script>
 </head>
 <body>
-  <div id="kr_chatContainer">
+  <div id="pageContent">
     <h2>Welcome to Kore.ai Chatbot</h2>
     <p>This chatbot is powered by Kore.ai WebSDK and runs locally on your machine.</p>
-    <button class="openChatWindow">Open Chat Window</button>
+   <!--<button class="openChatWindow">Open Chat Window</button> -->
   </div>
+
+  <!-- Chat container injected by SDK -->
+  <div id="kr_chatContainer"></div>
 </body>
 </html>
